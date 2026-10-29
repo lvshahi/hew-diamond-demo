@@ -1,239 +1,264 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#071321" />
+  <meta name="description" content="HEW Diamonds — Beyond Imagination. Timeless jewellery for every moment that matters." />
   <title>HEW Diamonds — Beyond Imagination</title>
-  <meta name="description" content="HEW Diamonds — luxury diamond jewellery, crafted beyond imagination.">
-  <meta name="theme-color" content="#0B1B3A">
-  <meta property="og:title" content="HEW Diamonds — Beyond Imagination">
-  <meta property="og:description" content="Luxury diamond jewellery, crafted beyond imagination.">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230B1B3A'/%3E%3Cpolygon points='30,30 70,30 90,50 50,90 10,50' fill='%23C9A86A'/%3E%3C/svg%3E">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Lets CSS use JS-only reveal states without hiding content if JavaScript fails -->
+  <script>document.documentElement.className += ' js';</script>
 
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/hero-diamond-ring.jpg" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Shared SVG artwork: gradients + reusable jewellery symbols -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <defs>
-      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#F3E3BA"/>
-        <stop offset=".5" stop-color="#C9A86A"/>
-        <stop offset="1" stop-color="#8F7440"/>
-      </linearGradient>
-      <linearGradient id="gemBase" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#F2F8FF"/>
-        <stop offset=".55" stop-color="#9DB8E0"/>
-        <stop offset="1" stop-color="#4C6FA8"/>
-      </linearGradient>
-    </defs>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-side header-left">
+        <button class="icon-btn" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuPanel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18M3 16h18"/></svg>
+        </button>
+        <button class="icon-btn" id="searchToggle" type="button" aria-label="Search" aria-expanded="false" aria-controls="searchPanel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+        </button>
+      </div>
 
-    <!-- Brilliant-cut diamond -->
-    <symbol id="gem" viewBox="0 0 200 180">
-      <polygon points="60,20 140,20 190,70 100,170 10,70" fill="url(#gemBase)"/>
-      <polygon points="10,70 60,20 70,70" fill="#fff" opacity=".5"/>
-      <polygon points="60,20 100,20 70,70" fill="#fff" opacity=".85"/>
-      <polygon points="100,20 130,70 70,70" fill="#fff" opacity=".3"/>
-      <polygon points="100,20 140,20 130,70" fill="#fff" opacity=".7"/>
-      <polygon points="140,20 190,70 130,70" fill="#fff" opacity=".42"/>
-      <polygon points="10,70 70,70 100,170" fill="#fff" opacity=".28"/>
-      <polygon points="70,70 130,70 100,170" fill="#fff" opacity=".6"/>
-      <polygon points="130,70 190,70 100,170" fill="#0B1B3A" opacity=".16"/>
-      <polygon points="60,20 140,20 190,70 100,170 10,70" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" stroke-linejoin="round"/>
-    </symbol>
+      <a class="brand" href="#home" aria-label="HEW Diamonds — home">
+        <img src="assets/hew-logo.png" alt="HEW Diamonds" width="631" height="257" />
+        <span class="brand-text" aria-hidden="true"><b>HEW</b><i>DIAMONDS</i></span>
+      </a>
 
-    <!-- Solitaire ring -->
-    <symbol id="ring" viewBox="0 0 300 300">
-      <circle cx="150" cy="205" r="78" fill="none" stroke="url(#gold)" stroke-width="11"/>
-      <circle cx="150" cy="205" r="72" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="1.5"/>
-      <use href="#gem" x="105" y="44" width="90" height="81"/>
-      <path d="M130 108 L170 108 L162 130 L138 130 Z" fill="url(#gold)"/>
-    </symbol>
+      <div class="header-side header-right">
+        <button class="icon-btn" id="bagBtn" type="button" aria-label="Shopping bag">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15l1-12Z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/></svg>
+        </button>
+        <button class="icon-btn" id="wishBtn" type="button" aria-label="Wishlist, 0 items">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.5 2.7C19.5 15.400 12 20 12 20Z"/></svg>
+          <span class="badge" id="wishCount" aria-hidden="true">0</span>
+        </button>
+      </div>
+    </div>
 
-    <!-- Pendant necklace -->
-    <symbol id="necklace" viewBox="0 0 300 300">
-      <path d="M30 30 Q150 270 270 30" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 9"/>
-      <path d="M30 30 Q150 270 270 30" fill="none" stroke="#C9A86A" stroke-opacity=".35" stroke-width="1"/>
-      <circle cx="150" cy="150" r="7" fill="url(#gold)"/>
-      <use href="#gem" x="118" y="158" width="64" height="58"/>
-    </symbol>
-
-    <!-- Drop earrings -->
-    <symbol id="earrings" viewBox="0 0 300 300">
-      <circle cx="90" cy="50" r="9" fill="url(#gold)"/>
-      <rect x="88.5" y="58" width="3" height="52" fill="#C9A86A"/>
-      <use href="#gem" x="60" y="108" width="60" height="54"/>
-      <circle cx="210" cy="50" r="9" fill="url(#gold)"/>
-      <rect x="208.5" y="58" width="3" height="52" fill="#C9A86A"/>
-      <use href="#gem" x="180" y="108" width="60" height="54"/>
-    </symbol>
-  </svg>
-
-  <!-- Navigation -->
-  <header class="nav" id="nav">
-    <a class="nav__logo" href="#hero" aria-label="HEW Diamonds — home">
-      <span class="nav__logo-main">HEW</span>
-      <span class="nav__logo-sub">Diamonds</span>
-    </a>
-
-    <nav class="nav__links" aria-label="Primary">
-      <a href="#collection">Collections</a>
-      <a href="#featured">Featured</a>
-      <a href="#story">Our Story</a>
-      <a href="#story">Contact</a>
-    </nav>
-
-    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span>
-    </button>
+    <form class="search-panel" id="searchPanel" role="search" hidden>
+      <label class="visually-hidden" for="searchInput">Search jewellery categories</label>
+      <input id="searchInput" type="search" placeholder="Search rings, necklaces, earrings…" autocomplete="off" enterkeyhint="search" />
+      <button type="submit" class="search-go" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="search-msg" id="searchMsg" role="status" aria-live="polite"></p>
+    </form>
   </header>
 
-  <!-- Mobile menu -->
-  <div class="menu" id="menu" aria-hidden="true">
-    <a href="#collection">Collections</a>
-    <a href="#featured">Featured</a>
-    <a href="#story">Our Story</a>
-    <a href="#story">Contact</a>
-  </div>
-
-  <!-- Section dots -->
-  <nav class="dots" id="dots" aria-label="Page sections">
-    <a href="#hero" aria-label="Opening"></a>
-    <a href="#collection" aria-label="Collection"></a>
-    <a href="#featured" aria-label="Featured"></a>
-    <a href="#story" aria-label="Our story"></a>
+  <!-- ============ MENU ============ -->
+  <nav class="menu-panel" id="menuPanel" aria-label="Main menu" aria-hidden="true">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#categories">Collections</a></li>
+      <li><a href="#featured">Our Favourites</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="menu-tag">Beyond Imagination</p>
   </nav>
 
-  <main>
+  <main id="top">
 
-    <!-- 1. HERO -->
-    <section class="snap hero" id="hero" data-section>
-      <div class="hero__sparkles" id="sparkles" aria-hidden="true"></div>
-      <div class="hero__rings" aria-hidden="true"><i></i><i></i><i></i></div>
-
-      <div class="hero__visual" id="heroVisual" aria-hidden="true">
-        <svg class="hero__gem" viewBox="0 0 200 180"><use href="#gem" width="200" height="180"/></svg>
+    <!-- ============ 1. CINEMATIC HERO ============ -->
+    <section class="hero" id="home" aria-label="HEW Diamonds introduction">
+      <div class="hero-media" id="heroMedia" data-video="">
+        <!-- Optional video: put a file path in data-video above (e.g. assets/hero.mp4) and it replaces the photo. -->
+        <img class="hero-img" id="heroImg" src="assets/hero-diamond-ring.jpg" width="1040" height="1400" alt="A brilliant-cut diamond ring with a rose-gold band resting on dark navy stone" fetchpriority="high" decoding="async" />
       </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-dim" id="heroDim" aria-hidden="true"></div>
 
-      <div class="hero__content">
-        <p class="eyebrow reveal">Fine Diamond Jewellery</p>
-        <h1 class="hero__title reveal" data-delay="1">
-          <span class="hero__hew">HEW</span>
-          <span class="hero__dia">Diamonds</span>
-        </h1>
-        <p class="hero__tag reveal" data-delay="2">Beyond Imagination</p>
-
-        <div class="hero__foot reveal" data-delay="3">
-          <a class="btn" href="#collection">Explore Collection</a>
-          <a class="cue" href="#collection" aria-label="Scroll to next section">
-            <span>Scroll</span><i></i>
-          </a>
+      <div class="hero-copy" id="heroCopy">
+        <p class="eyebrow">HEW DIAMONDS</p>
+        <h1>Beyond<br />Imagination</h1>
+        <span class="gold-rule" aria-hidden="true"></span>
+        <p class="hero-lede">Timeless jewellery for every moment that matters.</p>
+        <a class="cta" href="#categories">
+          <span>EXPLORE COLLECTIONS</span>
+          <span class="circle-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <div class="pager" id="heroPager" role="group" aria-label="Hero views">
+          <button type="button" aria-label="Show view 1" aria-current="true">01</button>
+          <button type="button" aria-label="Show view 2">02</button>
+          <button type="button" aria-label="Show view 3">03</button>
         </div>
       </div>
+
+      <a class="scroll-cue" href="#categories" aria-label="Scroll to collections">
+        <span>SCROLL</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
+      </a>
     </section>
 
-    <!-- 2. COLLECTION INTRO -->
-    <section class="snap collection" id="collection" data-section>
-      <div class="collection__inner">
-        <div class="collection__text">
-          <p class="eyebrow eyebrow--dark reveal">The Collection</p>
-          <h2 class="display reveal" data-delay="1">Light, shaped<br>by <em>hand.</em></h2>
-          <p class="lead reveal" data-delay="2">Every HEW diamond is chosen for its fire, cut by master artisans and set in warm gold or luminous platinum. Pieces made to be worn daily and treasured for generations.</p>
-          <a class="link link--dark reveal" data-delay="3" href="#featured">Discover the pieces</a>
-        </div>
+    <!-- ============ 2. CATEGORY PAGE ============ -->
+    <section class="categories" id="categories" aria-labelledby="catTitle">
+      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="goldLineA" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#c9a46a" stop-opacity="0"/>
+            <stop offset=".45" stop-color="#d8b67c" stop-opacity=".85"/>
+            <stop offset="1" stop-color="#c9a46a" stop-opacity=".1"/>
+          </linearGradient>
+        </defs>
+        <path class="wave-fill" d="M0 120V58C190 8 380 4 600 40S1040 100 1250 70C1340 57 1400 40 1440 24V120Z"/>
+        <path class="wave-line" d="M0 58C190 8 380 4 600 40S1040 100 1250 70C1340 57 1400 40 1440 24" stroke="url(#goldLineA)"/>
+      </svg>
 
-        <div class="tiles">
-          <a class="tile tile--tall reveal" data-delay="1" href="#" aria-label="Solitaires">
-            <svg class="art" viewBox="0 0 200 180" role="img" aria-label="Brilliant-cut diamond"><use href="#gem" width="200" height="180"/></svg>
-            <span class="tile__cap"><b>Solitaires</b><small>Discover</small></span>
-          </a>
-          <a class="tile reveal" data-delay="2" href="#" aria-label="Bridal">
-            <svg class="art" viewBox="0 0 300 300" role="img" aria-label="Diamond ring"><use href="#ring" width="300" height="300"/></svg>
-            <span class="tile__cap"><b>Bridal</b><small>Discover</small></span>
-          </a>
-          <a class="tile reveal" data-delay="3" href="#" aria-label="Everyday">
-            <svg class="art" viewBox="0 0 300 300" role="img" aria-label="Diamond drop earrings"><use href="#earrings" width="300" height="300"/></svg>
-            <span class="tile__cap"><b>Everyday</b><small>Discover</small></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. FEATURED -->
-    <section class="snap featured" id="featured" data-section>
-      <div class="featured__inner">
-        <header class="featured__head">
-          <div>
-            <p class="eyebrow reveal">Featured</p>
-            <h2 class="display display--light reveal" data-delay="1">Signature <em>pieces</em></h2>
-          </div>
-          <a class="link reveal" data-delay="2" href="#collection">View all</a>
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">OUR COLLECTIONS</p>
+          <h2 id="catTitle">Discover by Category</h2>
         </header>
 
-        <div class="cards" id="cards">
-          <article class="card reveal" data-delay="1">
-            <a class="card__media" href="#" aria-label="Aurelia Solitaire Ring">
-              <svg class="art" viewBox="0 0 300 300" role="img" aria-label="Solitaire diamond ring"><use href="#ring" width="300" height="300"/></svg>
-            </a>
-            <div class="card__meta">
-              <h3>Aurelia Solitaire Ring</h3>
-              <p>2.01 ct round brilliant · 18k gold</p>
-              <span>From ₹4,85,000</span>
-            </div>
-          </article>
-
-          <article class="card reveal" data-delay="2">
-            <a class="card__media" href="#" aria-label="Celeste Pendant">
-              <svg class="art" viewBox="0 0 300 300" role="img" aria-label="Diamond pendant necklace"><use href="#necklace" width="300" height="300"/></svg>
-            </a>
-            <div class="card__meta">
-              <h3>Celeste Pendant</h3>
-              <p>1.20 ct pendant · beaded gold chain</p>
-              <span>From ₹2,95,000</span>
-            </div>
-          </article>
-
-          <article class="card reveal" data-delay="3">
-            <a class="card__media" href="#" aria-label="Lumière Drop Earrings">
-              <svg class="art" viewBox="0 0 300 300" role="img" aria-label="Diamond drop earrings"><use href="#earrings" width="300" height="300"/></svg>
-            </a>
-            <div class="card__meta">
-              <h3>Lumière Drop Earrings</h3>
-              <p>2 × 0.75 ct · 18k gold</p>
-              <span>From ₹3,40,000</span>
-            </div>
-          </article>
+        <div class="cat-grid">
+          <a class="tile t-rings" href="#featured" style="--i:0" data-name="rings">
+            <img src="assets/category-rings.jpg" width="776" height="376" alt="Diamond rings in rose gold on warm stone" loading="lazy" decoding="async" />
+            <span class="tile-label">Rings</span>
+            <span class="circle-arrow sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="tile t-necklaces" href="#featured" style="--i:1" data-name="necklaces">
+            <img src="assets/category-necklaces.jpg" width="724" height="508" alt="Fine layered diamond necklace" loading="lazy" decoding="async" />
+            <span class="tile-label">Necklaces</span>
+            <span class="circle-arrow sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="tile t-earrings" href="#featured" style="--i:2" data-name="earrings">
+            <img src="assets/category-earrings.jpg" width="488" height="748" alt="Long diamond drop earring" loading="lazy" decoding="async" />
+            <span class="tile-label">Earrings</span>
+            <span class="circle-arrow sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="tile t-bangles" href="#featured" style="--i:3" data-name="bangles">
+            <img src="assets/category-bangles.jpg" width="740" height="332" alt="Stacked diamond bangles" loading="lazy" decoding="async" />
+            <span class="tile-label">Bangles</span>
+            <span class="circle-arrow sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="tile t-nosepins" href="#featured" style="--i:4" data-name="nose pins nosepins nose pin">
+            <img src="assets/category-nose-pins.jpg" width="556" height="492" alt="Floral diamond nose pin" loading="lazy" decoding="async" />
+            <span class="tile-label">Nose Pins</span>
+            <span class="circle-arrow sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- 4. BRAND STORY -->
-    <section class="snap story" id="story" data-section>
-      <svg class="story__gem" viewBox="0 0 200 180" aria-hidden="true"><use href="#gem" width="200" height="180"/></svg>
+    <!-- ============ 3. FEATURED JEWELLERY ============ -->
+    <section class="featured" id="featured" aria-labelledby="favTitle">
+      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="goldLineB" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#c9a46a" stop-opacity=".1"/>
+            <stop offset=".55" stop-color="#d8b67c" stop-opacity=".85"/>
+            <stop offset="1" stop-color="#c9a46a" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path class="wave-fill" d="M0 120V30C240 78 470 98 720 62S1190 -2 1440 44V120Z"/>
+        <path class="wave-line" d="M0 30C240 78 470 98 720 62S1190 -2 1440 44" stroke="url(#goldLineB)"/>
+      </svg>
 
-      <div class="story__inner">
-        <p class="eyebrow reveal">The HEW Promise</p>
-        <blockquote class="story__quote reveal" data-delay="1">
-          Diamonds are formed over a billion years.<br>
-          We take a little longer to <em>finish them.</em>
-        </blockquote>
-        <p class="lead lead--light reveal" data-delay="2">Ethically sourced, individually certified and finished by hand, so every piece carries a quiet kind of brilliance.</p>
-        <a class="btn btn--filled reveal" data-delay="3" href="#collection">Explore Collection</a>
+      <div class="wrap">
+        <header class="section-head section-head--row reveal">
+          <div>
+            <p class="eyebrow">FEATURED JEWELLERY</p>
+            <h2 id="favTitle">Our Favourites</h2>
+          </div>
+          <a class="view-all" href="#contact">
+            <span>View All</span>
+            <span class="circle-arrow sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </header>
+
+        <div class="fav-grid">
+          <article class="card card--lead reveal">
+            <div class="card-img">
+              <img src="assets/featured-ring.jpg" width="616" height="636" alt="Halo diamond ring on dark navy stone" loading="lazy" decoding="async" />
+              <span class="card-tag">Featured piece</span>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3>Aurora Halo Ring</h3>
+                <p class="price">₹48,500 <small>sample price</small></p>
+              </div>
+              <div class="card-actions">
+                <button class="mini-btn wish" type="button" aria-pressed="false" aria-label="Add Aurora Halo Ring to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.5 2.7C19.500 15.400 12 20 12 20Z"/></svg></button>
+                <button class="mini-btn bag" type="button" aria-label="Add Aurora Halo Ring to bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15l1-12Z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <div class="fav-small">
+            <article class="card reveal" style="--i:1">
+              <div class="card-img"><img src="assets/featured-necklace.jpg" width="604" height="636" alt="Round diamond pendant necklace" loading="lazy" decoding="async" /></div>
+              <div class="card-body">
+                <div><h3>Luna Pendant</h3><p class="price">₹62,000</p></div>
+                <div class="card-actions">
+                  <button class="mini-btn wish" type="button" aria-pressed="false" aria-label="Add Luna Pendant to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.5 2.7C19.500 15.400 12 20 12 20Z"/></svg></button>
+                  <button class="mini-btn bag" type="button" aria-label="Add Luna Pendant to bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15l1-12Z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/></svg></button>
+                </div>
+              </div>
+            </article>
+            <article class="card reveal" style="--i:2">
+              <div class="card-img"><img src="assets/featured-earrings.jpg" width="584" height="636" alt="Pear-cut diamond drop earrings" loading="lazy" decoding="async" /></div>
+              <div class="card-body">
+                <div><h3>Grace Drops</h3><p class="price">₹38,000</p></div>
+                <div class="card-actions">
+                  <button class="mini-btn wish" type="button" aria-pressed="false" aria-label="Add Grace Drops to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.5 2.7C19.500 15.400 12 20 12 20Z"/></svg></button>
+                  <button class="mini-btn bag" type="button" aria-label="Add Grace Drops to bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15l1-12Z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/></svg></button>
+                </div>
+              </div>
+            </article>
+            <article class="card reveal" style="--i:3">
+              <div class="card-img"><img src="assets/featured-bangles.jpg" width="642" height="636" alt="Stack of three diamond bangles" loading="lazy" decoding="async" /></div>
+              <div class="card-body">
+                <div><h3>Velora Bangles</h3><p class="price">₹75,000</p></div>
+                <div class="card-actions">
+                  <button class="mini-btn wish" type="button" aria-pressed="false" aria-label="Add Velora Bangles to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.5 2.7C19.500 15.400 12 20 12 20Z"/></svg></button>
+                  <button class="mini-btn bag" type="button" aria-label="Add Velora Bangles to bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15l1-12Z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/></svg></button>
+                </div>
+              </div>
+            </article>
+            <article class="card reveal" style="--i:4">
+              <div class="card-img"><img src="assets/featured-nose-pin.jpg" width="524" height="636" alt="Diamond flower nose pin on warm stone" loading="lazy" decoding="async" /></div>
+              <div class="card-body">
+                <div><h3>Ivy Nose Pin</h3><p class="price">₹12,500</p></div>
+                <div class="card-actions">
+                  <button class="mini-btn wish" type="button" aria-pressed="false" aria-label="Add Ivy Nose Pin to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.5 2.7C19.500 15.400 12 20 12 20Z"/></svg></button>
+                  <button class="mini-btn bag" type="button" aria-label="Add Ivy Nose Pin to bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15l1-12Z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/></svg></button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="demo-note">Demo site. Prices are sample data and photography is generated demo imagery, not actual inventory.</p>
       </div>
-
-      <footer class="footer">
-        <span>© <span id="year">2026</span> HEW Diamonds. All rights reserved.</span>
-        <span>Beyond Imagination</span>
-      </footer>
     </section>
-
   </main>
+
+  <footer class="site-footer" id="contact">
+    <a class="brand brand--footer" href="#home" aria-label="HEW Diamonds — back to top">
+      <img src="assets/hew-logo.png" alt="HEW Diamonds" width="631" height="257" loading="lazy" />
+      <span class="brand-text" aria-hidden="true"><b>HEW</b><i>DIAMONDS</i></span>
+    </a>
+    <p class="footer-tag">Beyond Imagination</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#categories">Collections</a>
+      <a href="#featured">Our Favourites</a>
+      <a href="mailto:hello@hewdiamonds.com">hello@hewdiamonds.com</a>
+    </nav>
+    <small>© <span id="year">2026</span> HEW Diamonds</small>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
